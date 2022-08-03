@@ -1,0 +1,54 @@
+{% extends 'gui/base.html' %}
+
+{% block content %}
+{% include 'gui/components/import-navbar.html' %}
+<div class="container" >
+    <div class="pb-5">
+        <div class="card shadow-lg border-0">
+            <div class="card-title fw-bold fs-4 ps-3 animate-charcter">
+                <span>
+                    Search result:
+                </span>
+            </div>
+            <div class="main">
+                <div class="row gr-view">
+                    <h3> Option on update time !</h3>
+                    {% for app in app_new %}
+                    <div class="col-sm-6 mb-2">
+                        <div class="d-flex align-items-center p-2" >
+                            <div class="wh64 mr-2 flex-shrink-0">
+                                <img class="logo" width="64" height="64"
+                                    src="/media/{{ app.appLogo }}">
+                            </div>
+                            <div class="d-block">
+                                <div class="text-truncate d-block mb-1"><a class="fw-bold" href="/view/{{ app.id }}" style="display: block;
+                                    white-space: nowrap;overflow: hidden;
+                                    text-overflow: ellipsis">{{ app.appName }}</a>
+                                </div>
+                                <div class="text-muted text-truncate">
+                                    <span style="display: block;
+                                        white-space: nowrap;overflow: hidden;
+                                        text-overflow: ellipsis">{{ app.appPublisher }}</span>
+                                </div>
+                                <div class="text-muted">
+                                    <span>{{ app.appVersion }}</span>
+                                </div>
+                                <div class="download-item-type">
+                                    <span
+                                        class="badge rounded-pill bg-success px-2 fs-10">{{ app.appsystem }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-footer">
+                :))))
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

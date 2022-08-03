@@ -1,0 +1,32 @@
+
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <!-- Position it: -->
+        <!-- - `.toast-container` for spacing between toasts -->
+        <!-- - `.position-absolute`, `top-0` & `end-0` to position the toasts in the upper right corner -->
+        <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->
+        <div class="toast-container p-3" style="position: fixed; bottom: 0px; right: 0px;">
+
+            <!-- Then put toasts within -->
+            <div class="toast show " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto"><i class="bi-globe"></i> AppShare</strong>
+                    <small>just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    See? Just like this.
+                </div>
+            </div>
+
+            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto"><i class="bi-code"></i>Dev AppShare</strong>
+                    <small>just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    Website is under development.
+                </div>
+            </div>
+        </div>
+    </div>

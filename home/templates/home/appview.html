@@ -1,0 +1,111 @@
+{% extends 'gui/base.html' %}
+
+{% block content %}
+
+    {% include 'gui/components/import-navbar.html' %}
+
+    {% include 'gui/components/import-event.html' %}
+
+    <div class="container p-5 context">
+        <div class="main">
+            <div class="row row-cols-1">
+                {% for a in app %}
+                <div class="col-xl-8">
+                    <div class="row">
+                        <small>AppShare/{{ a.appTitle }}</small>
+                    </div>
+                    <div class="row card border-0 shadow-lg p-4">
+                        <div class="row row-cols-2">
+                            <div class="col p-3">
+                                <img src="/media/{{ a.appLogo }}" alt="" class="logo">
+                            </div>
+                            <div class="col fw-bold fs-4">{{ a.appTitle }}</div>
+                        </div>
+                        <div class="row row-cols-2">
+                            <div class="col p-3">AppName</div>
+                            <div class="col fw-bold pt-3">{{ a.appName }}</div>
+                        </div>
+                        <div class="row row-cols-2 p-3">
+                            <div class="col">Publisher</div>
+                            <div class="col text-info">{{ a.appPublisher }}</div>
+                        </div>
+                        <div class="row row-cols-2 p-3">
+                            <div class="col">Version</div>
+                            <div class="col"><code>{{ a.appVersion }}</code></div>
+                        </div>
+                        <div class="row row-cols-2 p-3">
+                            <div class="col">Capacity</div>
+                            <div class="col"><code>{{ a.appCapacity }}</code></div>
+                        </div>
+                        <div class="row row-cols-2 p-3">
+                            <div class="col">operating system</div>
+                            <div class="col"><code>{{ a.appsystem }}</code></div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-4 content">
+                        <html-bold class="p-0">
+                            {{ a.appContent|safe }}
+                        </html-bold>
+                    </div>
+                    <div class="row row-cols-3 pt-5">
+                        <span class="fw-bold col fs-5">Download :</span>
+                        <button type="button" class="btn col btn-dark" onclick="location.href='{{ a.appDownload.0 }}'">MOD</button>
+                        <button type="button" class="btn col btn-success">CHplay</button>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-xl-4 p-4">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-title ">
+                            <span class="fw-bold fs-3 p-3">
+                                Category
+                            </span>
+                        </div>
+                        <span class=" fs-6 p-1">
+                            Tools
+                        </span>
+                        <span class=" fs-6 p-1">
+                            Game Mod
+                        </span>
+                        <span class=" fs-6 p-1">
+                            Game Crack
+                        </span>
+                        <div class="card-footer">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#"><i
+                                            class="bi-facebook"></i>Facebook</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" aria-current="page" href="#"><i
+                                            class="bi-instagram"></i>instagram</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#"><i
+                                            class="bi-telegram"></i>telegramm</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+        var width = $(window).width();
+        console.log(width);
+        if (width < 900) {
+            $('.context').removeClass('container')
+            $('.context').addClass('container-fluid');
+        }
+        else {
+            $('.context').removeClass('container-fluid')
+            $('.context').addClass('container');
+        }
+        ;
+    </script>
+    
+{% endblock content %}

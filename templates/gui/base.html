@@ -1,0 +1,24 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    {% include 'gui/components/import-header.html' %}
+
+    <title>{% block title %}AppShare{% endblock title %}</title>
+
+</head>
+
+<body>
+
+    {% block content %}{% endblock content %}
+
+
+    <footer class="modal-footer">
+        2022@website thuộc vazuta-group và vazuta-team
+    </footer>
+</body>
+
+</html>
